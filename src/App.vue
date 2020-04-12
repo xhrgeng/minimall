@@ -8,9 +8,15 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
+import jsonp from 'jsonp'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      data:""
+    }
+  },
   components: {
     HelloWorld
   },
@@ -19,6 +25,11 @@ export default {
     //axios.get(url).then(()=>{
 
     //})
+    jsonp(url,(err,res)=>{
+      let result = res;
+      this.data=result
+
+    })
   }
 }
 </script>
