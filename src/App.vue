@@ -7,7 +7,7 @@
 <script>
 
 
-
+import storage from './storage/index'
 export default {
   name: 'App',
   data () {
@@ -19,7 +19,11 @@ export default {
    
   },
   mounted () {
- 
+    //测试存储
+    //storage.setItem("a",1);
+    //storage.setItem("abc",{a:1},"user");
+    //storage.clear('a')
+    storage.clear('age','user')
   }
 }
 </script>
