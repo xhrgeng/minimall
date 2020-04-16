@@ -12,7 +12,7 @@ export default {
   name: 'App',
   data () {
     return{
-
+      res:{}
     }
   },
   components: {
@@ -24,6 +24,11 @@ export default {
     //storage.setItem("abc",{a:1},"user");
     //storage.clear('a')
     storage.clear('age','user')
+
+    //本地集成mockjs实现数据mock
+   this.axios.get('/user/login').then((res)=>{
+     this.res = res;
+   })
   }
 }
 </script>
