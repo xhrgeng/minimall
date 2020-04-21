@@ -3,60 +3,60 @@
   <div class="index">
     <div class="container">
       <div class="swiper-box">
-          <div class="nav-menu">
-              <ul class="menu-wrap">
-                  <li class="menu-item">
-                      <a href="javascript:;">手机 电话卡</a>
-                      <div class="children">
-                        <ul v-for="(item,i) in menuList" :key="i">
-                          <li v-for="(sub,j) in item" :key="j">
-                            <a v-bind:href="sub?'/#/product/'+sub.id:''">
-                              <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt="">
-                              {{sub?sub.name : '小米10'}}
-                              </a>
-                          </li>
-                        </ul>
-                      </div>
+        <div class="nav-menu">
+          <ul class="menu-wrap">
+            <li class="menu-item">
+              <a href="javascript:;">手机 电话卡</a>
+              <div class="children">
+                <ul v-for="(item,i) in menuList" :key="i">
+                  <li v-for="(sub,j) in item" :key="j">
+                    <a v-bind:href="sub?'/#/product/'+sub.id:''">
+                      <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt />
+                      {{sub?sub.name : '小米10'}}
+                    </a>
                   </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">电视 盒子</a>
-                      <div class="children">
-                         <ul v-for="(item,i) in menuList" :key="i">
-                          <li v-for="(sub,j) in item" :key="j">
-                            <a v-bind:href="sub?'/#/product/'+sub.id:''">
-                              <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt="">
-                              {{sub?sub.name : '小米10'}}
-                              </a>
-                          </li>
-                        </ul>
-                      </div>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">电视 盒子</a>
+              <div class="children">
+                <ul v-for="(item,i) in menuList" :key="i">
+                  <li v-for="(sub,j) in item" :key="j">
+                    <a v-bind:href="sub?'/#/product/'+sub.id:''">
+                      <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt />
+                      {{sub?sub.name : '小米10'}}
+                    </a>
                   </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">笔记本 平板</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">家电 插线板</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">出行 穿戴</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">智能 路由器</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">电源 配件</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-                  <li class="menu-item">
-                      <a href="javascript:;">生活 箱包</a>
-                      <!-- <div class="children"></div> -->
-                  </li>
-              </ul>
-          </div>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">笔记本 平板</a>
+              <!-- <div class="children"></div> -->
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">家电 插线板</a>
+              <!-- <div class="children"></div> -->
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">出行 穿戴</a>
+              <!-- <div class="children"></div> -->
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">智能 路由器</a>
+              <!-- <div class="children"></div> -->
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">电源 配件</a>
+              <!-- <div class="children"></div> -->
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">生活 箱包</a>
+              <!-- <div class="children"></div> -->
+            </li>
+          </ul>
+        </div>
         <swiper v-bind:options="swiperOption">
           <swiper-slide v-for="(item,index) in slideList" :key="index">
             <a v-bind:href="'/#/product'+item.id">
@@ -103,13 +103,12 @@ export default {
         },
         pagination: {
           el: ".swiper-pagination",
-          clickable:true
+          clickable: true
         },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
-        },
-        
+        }
       },
       slideList: [
         {
@@ -133,17 +132,23 @@ export default {
           img: "/imgs/slider/slide-5.jpg"
         }
       ],
-      menuList:[
+      menuList: [
         [
-          {id:30,img:'/imgs/item-box-1.png',name:'小米CC9',},
-           {id:31,img:'/imgs/item-box-2.png',name:'小米青春版',},
-            {id:32,img:'/imgs/item-box-3.jpg',name:'RedMi K20 pro',},
-             {id:33,img:'/imgs/item-box-4.jpg',name:'4G专区',},
+          { id: 30, img: "/imgs/item-box-1.png", name: "小米CC9" },
+          { id: 31, img: "/imgs/item-box-2.png", name: "小米青春版" },
+          { id: 32, img: "/imgs/item-box-3.jpg", name: "RedMi K20 pro" },
+          { id: 33, img: "/imgs/item-box-4.jpg", name: "4G专区" }
         ],
-        [{id:30,img:'/imgs/item-box-1.png',name:'小米9',},
-           {id:31,img:'/imgs/item-box-2.png',name:'小春版',},
-            {id:32,img:'/imgs/item-box-3.jpg',name:'RedMi K20 pro',},
-             {id:33,img:'/imgs/item-box-4.jpg',name:'4G专区',},],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]
+        [
+          { id: 30, img: "/imgs/item-box-1.png", name: "小米9" },
+          { id: 31, img: "/imgs/item-box-2.png", name: "小春版" },
+          { id: 32, img: "/imgs/item-box-3.jpg", name: "RedMi K20 pro" },
+          { id: 33, img: "/imgs/item-box-4.jpg", name: "4G专区" }
+        ],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
       ]
     };
   }
@@ -151,91 +156,84 @@ export default {
 </script>
 <style lang='scss' scoped>
 //@import url(); 引入公共css类
-@import './../assets/scss/mixin.scss';
-@import './../assets/scss/config.scss';
+@import "./../assets/scss/mixin.scss";
+@import "./../assets/scss/config.scss";
 .index {
   .swiper-box {
-    .nav-menu{
-        position: absolute;
-        width: 264px;
-        height:451px;
-        z-index:9;
-        background-color: #55585a6b;
-        padding: 26px 0;
-        box-sizing:border-box;
-       
-        .menu-wrap{
-            .menu-item{
-                height:50px;
-                line-height: 50px;
-                a{
-                    position: relative;
-                    display: block;
-                    font-size: 16px;
-                    color:#ffffff;
-                    padding-left:30px;
-                    &:after{
-                        position: absolute;
-                        top: 17.5px;
-                        right: 30px;
-                        content: "";
-                        @include bgImg(10px,15px,'/imgs/icon-arrow.png');
+    .nav-menu {
+      position: absolute;
+      width: 264px;
+      height: 451px;
+      z-index: 9;
+      background-color: #55585a6b;
+      padding: 26px 0;
+      box-sizing: border-box;
 
-<<<<<<< HEAD
-</style>   
-=======
-                    }
-                    }
-                    &:hover{
-                        background-color: $colorA;
-                        .children{
-                          display: block;
-                          
-                        }
-                    }
-                    .children{
-                      display: none;
-                      width:1000px;
-                      height:451px;
-                      background-color: $colorG;
-                      position: absolute;
-                      top:0;
-                      left:264px;
-                      border: 1px solid $colorH;
-                      color:red;
-                      
-                     
-                      ul{
-                        display: flex;
-                        justify-content: space-between;
-                        height:75px;
-                        li{
-                          height:75px;
-                          line-height: 75px;
-                         // width: 241px;
-                          flex: 1;
-                          padding-left: 23px;
-                        }
-                        a{
-                          color:$colorB;
-                          font-size: 14px;
-                        }
-                        img{
-                          width:42px;
-                          height: 35px;
-                          vertical-align: middle;
-                          margin-right: 14px;
-                        }
-                      }
-                    }
-                
+      .menu-wrap {
+        .menu-item {
+          height: 50px;
+          line-height: 50px;
+          a {
+            position: relative;
+            display: block;
+            font-size: 16px;
+            color: #ffffff;
+            padding-left: 30px;
+            &:after {
+              position: absolute;
+              top: 17.5px;
+              right: 30px;
+              content: "";
+              @include bgImg(10px, 15px, "/imgs/icon-arrow.png");
             }
+          }
+          &:hover {
+            background-color: $colorA;
+            .children {
+              display: block;
+            }
+          }
+          .children {
+            display: none;
+            width: 1000px;
+            height: 451px;
+            background-color: $colorG;
+            position: absolute;
+            top: 0;
+            left: 264px;
+            border: 1px solid $colorH;
+            color: red;
+
+            ul {
+              display: flex;
+              justify-content: space-between;
+              height: 75px;
+              li {
+                height: 75px;
+                line-height: 75px;
+                // width: 241px;
+                flex: 1;
+                padding-left: 23px;
+              }
+              a {
+                color: $colorB;
+                font-size: 14px;
+              }
+              img {
+                width: 42px;
+                height: 35px;
+                vertical-align: middle;
+                margin-right: 14px;
+              }
+            }
+          }
         }
+      }
     }
     .swiper-container {
       height: 451px;
-      .swiper-button-prev{
-          left:274px
+      .swiper-button-prev {
+        left: 274px;
       }
       img {
         width: 100%;
@@ -245,4 +243,4 @@ export default {
   }
 }
 </style>   
->>>>>>> mock
+

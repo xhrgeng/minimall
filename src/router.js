@@ -9,12 +9,7 @@ import Order from './pages/order.vue'
 import OrderList from './pages/orderList.vue'
 import OrderConfrim from './pages/orderConfirm.vue'
 import OrderPay from './pages/orderPay.vue'
-<<<<<<< HEAD
 import AliPay from './pages/Alipay.vue'
-=======
-import AliPay from './pages/alipay.vue'
->>>>>>> mock
-
 Vue.use(Router);
 export default new Router({
     routes:[
