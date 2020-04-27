@@ -138,11 +138,10 @@ export default {
   },
   methods: {
     getProductList(){
-      this.axios.get('/products',{
+      this.axios.get('products',{
         params:{
           categoryId:'100012',
          pageSize:6
-
         }
       }).then((res)=>{
         // if(res.list.length>6){

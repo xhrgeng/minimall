@@ -5,23 +5,16 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  data () {
-    return{
-     
-    }
+  name: "App",
+  data() {
+    return {};
   },
-  components: {
-   
-  },
-  mounted () {
-   
-}
-}
+  components: {},
+  mounted() {}
+};
 </script>
 
 <style>
-@import './assets/scss/reset.scss'
+@import "./assets/scss/reset.scss";
 </style>
