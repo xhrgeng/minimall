@@ -31,7 +31,7 @@
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
                   <a v-bind:href="'/#/product/'+item.id" target="_blank">
                     <div class="pro-img">
-                      <img :src="item.mainImage" :alt="item.subtitle">
+                      <img v-lazy="item.mainImage" :alt="item.subtitle">
                     </div>
                     <div class="pro-name">{{item.name}}</div>
                     <div class="pro-price">{{item.price | currency}}</div>
@@ -53,7 +53,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-3-1.jpg" alt="">
+                      <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -62,7 +62,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -71,7 +71,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -80,7 +80,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -89,7 +89,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -98,7 +98,7 @@
                 <li class='product'>
                   <a href="" target="_blank">
                     <div class="pro-img">
-                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -123,7 +123,7 @@ export default {
   name: "nav-header",
   data(){
     return {
-      username:'',
+      username:this.$store.state.username,
       phoneList:[]
     }
   },

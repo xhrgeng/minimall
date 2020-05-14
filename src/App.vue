@@ -11,10 +11,28 @@ export default {
     return {};
   },
   components: {},
-  mounted() {}
+  mounted() {
+    this.getUser();
+    this.getCartCount();
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then(()=>{
+        //保存到vues里面
+      })
+    },
+    getCartCount(){
+      this.axios.get('/carts/products/sum').then(()=>{
+
+      })
+    }
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
 @import "./assets/scss/reset.scss";
+@import "./assets/scss/config.scss";
+@import "./assets/scss/button.scss";
+
 </style>
