@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background:red;
+    }
+</style>
+<div></div>
+<body>
+    <script>
+     var foo = 'get-element-by-id'
+     function string12(foo){
+    var arr=foo.split('-');
+    for(var i=1;i<arr.length;i++){
+        arr[i]=arr[i][0].toUpperCase()+arr[i].slice(1);
+    }
+    return arr.join("");
+    }
+    console.log(string12(foo))
+    var str=[1,5,4,8,6,9,464,6,47];
+    for(var i=0;i<str.length;i++){
+        for(var j=0;j<=str.length-i;j++){
+            if(str[j]>str[j+1]){
+                var tem=str[j];
+                str[j]=str[j+1]
+                str[j+1]=tem
+                
+            }
+            
+        }
+    }
+    console.log(str)
+    var arr=[1,5,4,8,6,8,9,464,6,47,8,8,8,8,85];
+    var t=[];
+    t[0]=arr[0]
+    for(var i=0;i<arr.length;i++){
+        for(var j=0;j<t.length;j++){
+            if(t[j]==arr[i]){
+                break;
+            }
+            if(j==t.length-1){
+                t.push(arr[i]);
+            }
+        }
+    }
+    function sort(a,b)
+    {
+    return a - b
+    }
+    console.log(t.sort())
+    </script>
+</body>
+</html>

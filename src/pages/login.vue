@@ -38,7 +38,9 @@
 </template>
 
 <script>
+
 import {mapActions} from 'vuex'
+import {Message} from 'element-ui'
 export default {
   name: 'login',
   data(){
@@ -56,20 +58,25 @@ export default {
         username,
         password
       }).then((res)=>{
-        this.$cookie.set('userId',res.id,{expires:'1M'}); 
+        this.$cookie.set('userId',res.id,{expires:'Session'}); 
         this.saveUserName(res.username);
-        this.$router.push('/index');
+        this.$router.push({
+          name:'index',
+          params:{
+            from:'login'
+          }
+        });
       })
     },
     ...mapActions(['saveUserName']),
     //注册
     register(){
       this.axios.post('/user/register',{
-        username:'zhangsan',
-        password:'123456',
-        email:'zhangsan@163.com'
+        username:'hhhh',
+        password:'hhhh',
+        email:'Want_me@163.com'
       }).then(()=>{
-        alert('注册成功')
+        Message.succes('注册成功')
       })
     }
     

@@ -4,8 +4,12 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
 import VueCookie from 'vue-cookie'
+import { Message } from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyLoad from 'vue-lazyload'
 import store from './store'
+//import Element from 'element-ui'
+//import './assets/scss/element-variables.scss'
 //import env from "./env"
 
 // const mock = true;
@@ -30,15 +34,24 @@ axios.interceptors.response.use(function(response){
     return Promise.reject(res);
     
   }else{
-    alert(res.msg);
+   
+    Message.success(res.msg)
     return Promise.reject(res);
   }
+},(error)=>{
+  let res = error.response;
+  Message.error(res.data.message);
+  
 });
 
 
 
 Vue.use(VueAxios, axios);
 Vue.use(VueCookie);
+Vue.prototype.$message = Message;
+Vue.use(Message);
+//Vue.use(Element)
+
 
 Vue.use(VueLazyLoad,{
   loading:'/imgs/loading-svg/loading-bars.svg'

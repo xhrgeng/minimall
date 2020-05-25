@@ -11,9 +11,11 @@
         <div class="topbar-user">
           <a href="javascript:;" v-if="username">{{username}}</a>
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
-          <a href="javascript:;" v-if="username">我的订单</a>
+          <a href="javascript:;" v-if="username" @click="logout">退出</a>
+          <a href="/#/order/list" v-if="username">我的订单</a>
           <a href="javascript:;" class="my-cart" @click="goToCart">
-            <span class="icon-cart"></span>购物车({{cartCount}})
+            <span class="icon-cart"></span>
+            购物车({{cartCount}})
           </a>
         </div>
       </div>
@@ -31,7 +33,7 @@
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
                   <a v-bind:href="'/#/product/'+item.id" target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="item.mainImage" :alt="item.subtitle">
+                      <img v-lazy="item.mainImage" :alt="item.subtitle" />
                     </div>
                     <div class="pro-name">{{item.name}}</div>
                     <div class="pro-price">{{item.price | currency}}</div>
@@ -42,63 +44,76 @@
           </div>
           <div class="item-menu">
             <span>ReadMi小米</span>
-            <div class="children">
-              
-            </div>
+            <div class="children"></div>
           </div>
           <div class="item-menu">
             <span>小米电视</span>
             <div class="children">
-               <ul>
-                <li class='product'>
-                  <a href="" target="_blank">
+              <ul>
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'" alt="">
+                      <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'" alt />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
                   </a>
                 </li>
-                <li class='product'>
-                  <a href="" target="_blank">
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
+                      <img
+                        v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'"
+                        alt
+                      />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
                   </a>
                 </li>
-                <li class='product'>
-                  <a href="" target="_blank">
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
+                      <img
+                        v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'"
+                        alt
+                      />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
                   </a>
                 </li>
-                <li class='product'>
-                  <a href="" target="_blank">
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
+                      <img
+                        v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'"
+                        alt
+                      />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
                   </a>
                 </li>
-                <li class='product'>
-                  <a href="" target="_blank">
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
+                      <img
+                        v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'"
+                        alt
+                      />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
                   </a>
                 </li>
-                <li class='product'>
-                  <a href="" target="_blank">
+                <li class="product">
+                  <a href target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'" alt="">
+                      <img
+                        v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90'"
+                        alt
+                      />
                     </div>
                     <div class="pro-name">小米电视</div>
                     <div class="pro-price">14999元起</div>
@@ -110,7 +125,7 @@
         </div>
         <div class="header-search">
           <div class="wrapper">
-            <input type="text" name="keyword">
+            <input type="text" name="keyword" />
             <a href="javascript:;"></a>
           </div>
         </div>
@@ -119,189 +134,209 @@
   </div>
 </template>
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
+
 export default {
   name: "nav-header",
-  data(){
+  data() {
     return {
-      
-      phoneList:[]
-    }
+      phoneList: []
+    };
   },
   computed: {
-    username(){
+    username() {
       return this.$store.state.username;
     },
-    ...mapState(['cartCount'])
+    ...mapState(["cartCount"])
   },
-  filters:{//过滤
-    currency(val){
-      if(!val)return '0.00';
-      return '￥' + val.toFixed(2)+'元';
+  filters: {
+    //过滤
+    currency(val) {
+      if (!val) return "0.00";
+      return "￥" + val.toFixed(2) + "元";
     }
   },
-  mounted () {
-   this.getProductList()
+  mounted() {
+    this.getProductList();
+    let params = this.$route.params;
+    if (params && params.from == "login") {
+      this.getCartCount(); //再次获取
+    }
   },
+
   methods: {
-    getProductList(){
-      this.axios.get('products',{
-        params:{
-          categoryId:'100012',
-         pageSize:6
-        }
-      }).then((res)=>{
-        // if(res.list.length>6){
-        //   this.phoneList = res.list.slice(0,6);
-        // }
-        this.phoneList = res.list
-      })
+    getProductList() {
+      this.axios
+        .get("products", {
+          params: {
+            categoryId: "100012",
+            pageSize: 6
+          }
+        })
+        .then(res => {
+          // if(res.list.length>6){
+          //   this.phoneList = res.list.slice(0,6);
+          // }
+          this.phoneList = res.list;
+        });
     },
-    login(){
-this.$router.push('/login');
+    login() {
+      this.$router.push("/login");
     },
-    goToCart(){
-      this.$router.push('/cart');
+    getCartCount() {
+      this.axios.get("/carts/products/sum").then((res = 0) => {
+        this.$store.dispatch("saveCartCount", res);
+      });
+    },
+    logout() {
+      this.axios.post("/user/logout").then(() => {
+        this.$message.success("退出成功");
+        this.$cookie.set("userId", "", { expires: "-1" });
+        this.$store.dispatch("saveUserName", "");
+        this.$store.dispatch("saveCartCount", "0");
+      });
+    },
+
+    goToCart() {
+      this.$router.push("/cart");
     }
   }
 };
 </script>
 <style lang="scss">
-@import './../assets/scss/base.scss';
-@import './../assets/scss/mixin.scss';
-@import './../assets/scss/config.scss';
+@import "./../assets/scss/base.scss";
+@import "./../assets/scss/mixin.scss";
+@import "./../assets/scss/config.scss";
 .header {
   .nav-topbar {
     height: 39px;
     line-height: 39px;
     background-color: #333333;
-    color:#B0B0B0 ;
+    color: #b0b0b0;
     .container {
-
       @include flex();
-      a{
+      a {
         display: inline-block;
-        color:#B0B0B0;
+        color: #b0b0b0;
         margin-left: 17px;
       }
-      .my-cart{
+      .my-cart {
         width: 110px;
-        background-color: #FF6600;
+        background-color: #ff6600;
         text-align: center;
-        color:#ffffff;
-        .icon-cart{
-          @include bgImg(16px,12px,'/imgs/icon-cart-checked.png');
+        color: #ffffff;
+        .icon-cart {
+          @include bgImg(16px, 12px, "/imgs/icon-cart-checked.png");
           margin-right: 4px;
         }
       }
     }
   }
-  .nav-header{
-    .container{
+  .nav-header {
+    .container {
       position: relative;
       height: 112px;
       @include flex();
-     
-      .header-menu{
+
+      .header-menu {
         display: inline-block;
-         width: 643px;
+        width: 643px;
         padding-left: 209px;
-        .item-menu{
+        .item-menu {
           display: inline-block;
-          color:#333333;
+          color: #333333;
           font-weight: bold;
           line-height: 112px;
           margin-right: 20px;
-          span{
+          span {
             cursor: pointer;
           }
-          &:hover{
-            color:$colorA;
-            .children{
+          &:hover {
+            color: $colorA;
+            .children {
               height: 220px;
               opacity: 1;
             }
           }
-          .children{
-             position:absolute;
-              top:112px;
-              left:0;
-              width:1226px;
-              height:0;
-              opacity:0;
-              overflow:hidden;
-              border-top:1px solid #E5E5E5;
-              box-shadow:0px 7px 6px 0px rgba(0, 0, 0, 0.11);
-              z-index: 10;
-              transition:all .5s;
-              background-color: #ffffff;
-           
-              .product{
-                position:relative;
-                float:left;
-                width:16.6%;
-                height:220px;
-                font-size:12px;
-                line-height:12px;
-                text-align: center;
-              a{
+          .children {
+            position: absolute;
+            top: 112px;
+            left: 0;
+            width: 1226px;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            border-top: 1px solid #e5e5e5;
+            box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
+            z-index: 10;
+            transition: all 0.5s;
+            background-color: #ffffff;
+
+            .product {
+              position: relative;
+              float: left;
+              width: 16.6%;
+              height: 220px;
+              font-size: 12px;
+              line-height: 12px;
+              text-align: center;
+              a {
                 display: inline-block;
               }
-              img{
+              img {
                 height: 111px;
                 width: auto;
-                margin-top:26px;
+                margin-top: 26px;
               }
-              .pro-img{
+              .pro-img {
                 height: 137px;
               }
-              .pro-name{
-              font-weight:bold ;
-              margin-top:19px;
-              margin-bottom:8px;
-              color: $colorB;
+              .pro-name {
+                font-weight: bold;
+                margin-top: 19px;
+                margin-bottom: 8px;
+                color: $colorB;
               }
-              .pro-price{
-                color:$colorA;
+              .pro-price {
+                color: $colorA;
               }
-              &:before{
-              content: "";
-              position: absolute;
-              top:28px;
-              right:0;
-              border-left:1px solid $colorF;
-              height:100px;
+              &:before {
+                content: "";
+                position: absolute;
+                top: 28px;
+                right: 0;
+                border-left: 1px solid $colorF;
+                height: 100px;
               }
-              &:last-child:before{
+              &:last-child:before {
                 display: none;
               }
             }
-
           }
         }
       }
-      .header-search{
-        width:319px;
-       
-        .wrapper{
+      .header-search {
+        width: 319px;
+
+        .wrapper {
           height: 50px;
-          border: 1px solid #E0E0E0;
+          border: 1px solid #e0e0e0;
           display: flex;
           align-items: center;
-          input{
+          input {
             box-sizing: border-box;
-            border:none;
-            border-right:1px solid #E0E0E0;
-            width:264px;
+            border: none;
+            border-right: 1px solid #e0e0e0;
+            width: 264px;
             height: 50px;
             padding-left: 14px;
           }
-          a{
+          a {
             display: inline-block;
-            width:18px;
-            height:18px;
-            background: url('/imgs/icon-search.png') no-repeat center;
-            background-size:contain ;
+            width: 18px;
+            height: 18px;
+            background: url("/imgs/icon-search.png") no-repeat center;
+            background-size: contain;
             margin-left: 17px;
           }
         }
